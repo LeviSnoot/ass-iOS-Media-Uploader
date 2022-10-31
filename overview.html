@@ -1,0 +1,323 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="format-detection" content="telephone=no,date=no">
+<title>tycrek:ass iOS Media Uploader</title>
+<style>
+body {
+	font-family: system-ui;
+	font-size: 0.95em;
+	margin-top: 1rem;
+	margin-bottom: calc(1rem + env(safe-area-inset-bottom));
+	word-break: break-word;
+}
+
+button {
+	color: #000;
+	background-color: #e4e4ff;
+	width: 100%;
+	font-size: 1em;
+	font-weight: normal;
+	line-height: 1.8;
+	text-align: left;
+	margin: 3px 0;
+	padding: 1px 8px;
+	border: 1px #aaa;
+	border-style: solid;
+	border-radius: 8px;
+	cursor: initial;
+	touch-action: manipulation;
+}
+
+.button {
+	margin-bottom: 0;
+	border-bottom-style: none;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	cursor: auto;
+}
+.button::after {
+	content: '\25A1';
+	float: right;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+.closed {
+	margin-bottom: 3px;
+	border-bottom-style: solid;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+.closed::after { content: '\2212'; }
+
+.nonbottom {
+	margin-bottom: 0;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	border-bottom-style: none;
+}
+.nontop {
+	margin-top: 0;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.gGray { background-color: #e0e0e0; }
+.gGreen { background-color: #ddffdd; }
+.gYellow { background-color: #ffeebb; }
+.gOrange { background-color: #ffddcc; }
+.gRed { background-color: #ffccdd; }
+.gBlue { background-color: #aaccff; }
+.gUnknown { background-color: #bbffff; }
+.gParams {
+	text-align: center;
+	background-color: #f8f8f8;
+}
+
+.content {
+	overflow: hidden;
+	margin-bottom: 3px;
+	padding: 3px 0 3px 8px;
+	border: 1px #aaa;
+	border-style: none solid solid solid;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+.contentloop {
+	margin-bottom: 0;
+	padding-top: 3px;
+	border-bottom-style: none;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.dashed { border-left-style: dashed; }
+
+.inside {
+	border-right-style: none;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.commentcontent { background-color: #ffeebb; }
+
+.row {
+	display: flex;
+	padding: 0 2px;
+}
+
+.col1 {
+	margin-right: 3px;
+	padding-right: 4px;
+	border-right-style: double;
+}
+.col2 { white-space: pre-wrap; }
+
+span.box {
+	display: inline;
+	margin: 0 2px;
+	padding: 2px 4px;
+	border-radius: 6px;
+	background-color: #fff;
+}
+span.var { font-style: italic; }
+span.magic {
+	cursor: pointer;
+	font-style: italic;
+	text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+	body { background: #000; color: #eee; }
+	button { background: #514c72; color: #eee; }
+	.gGray { background-color: #555555; }
+	.gGreen { background-color: #3a6441; }
+	.gYellow { background-color: #716d33; }
+	.gOrange { background-color: #76523f; }
+	.gRed { background-color: #674044; }
+	.gBlue { background-color: #384c67; }
+	.gUnknown { background-color: #377172; }
+	.gParams { background-color: #181818; }
+	.commentcontent { background-color: #716d33; }
+	span.box { background-color: #000; }
+}
+</style></head><body>
+<button class="button gParams"><b>tycrek:ass iOS Media Uploader</b> (24 actions, 18 KB)</button>
+<div class="content"><div class="col2">"WFQuickActionSurfaces": [],
+"WFWorkflowClientVersion": "1206.4.3",
+"WFWorkflowHasOutputFallback": false,
+"WFWorkflowHasShortcutInputVariables": true,
+"WFWorkflowIcon": {
+   "WFWorkflowIconStartColor": 4271458815,
+   "WFWorkflowIconGlyphNumber": 59826
+},
+"WFWorkflowImportQuestions": [
+   {
+      "Category": "Parameter",
+      "ParameterKey": "WFURL",
+      "ActionIndex": <span class="magic" onclick="magictap(13)"><b>13</b></span>,
+      "Text": "URL for your ass instance:",
+      "DefaultValue": "https://"
+   },
+   {
+      "Category": "Parameter",
+      "ParameterKey": "WFHTTPHeaders",
+      "ActionIndex": <span class="magic" onclick="magictap(13)"><b>13</b></span>,
+      "Text": "Add your token in the \"Text\" field. You can add any other headers you'd like here. For information on headers and how to use them, check the comment in the shortcut.",
+      "DefaultValue": {
+         "Value": {
+            "WFDictionaryFieldValueItems": [
+               {
+                  "WFItemType": 0,
+                  "WFKey": {
+                     "Value": {
+                        "string": "Authorization"
+                     },
+                     "WFSerializationType": "WFTextTokenString"
+                  },
+                  "WFValue": {
+                     "Value": {
+                        "string": ""
+                     },
+                     "WFSerializationType": "WFTextTokenString"
+                  }
+               }
+            ]
+         },
+         "WFSerializationType": "WFDictionaryFieldValue"
+      }
+   }
+],
+"WFWorkflowInputContentItemClasses": [
+   "WFImageContentItem",
+   "WFAVAssetContentItem",
+   "WFGenericFileContentItem"
+],
+"WFWorkflowMinimumClientVersion": 1113,
+"WFWorkflowMinimumClientVersionString": "1113",
+"WFWorkflowNoInputBehavior": {
+   "Name": "WFWorkflowNoInputBehaviorAskForInput",
+   "Parameters": {
+      "ItemClass": "WFPhotoMediaContentItem"
+   }
+},
+"WFWorkflowOutputContentItemClasses": [],
+"WFWorkflowTypes": [
+   "ActionExtension"
+]
+</div></div>
+
+<button class="button gYellow" id="m0">
+0 Comment</button>
+	<div class="content commentcontent">
+		<div class="col2">For info on headers and how to use them, look here: https://github.com/tycrek/ass#header-overrides
+
+Credit to tycrek &amp; contributors for the image server, this shortcut would not exist without them.
+
+v1.0.0 by https://github.com/LeviSnoot</div></div>
+<button class="button " id="m1">
+1 Get Name of <span class="box"><span class="var"><b>[Shortcut Input</b> as GenericFile’s File Extension<b>]</b></span></span>&#12288;&#187;</button>
+	<div class="content">
+		<div class="row"><div class="col1">GetWebPageTitle</div>
+			<div class="col2">false</div></div></div>
+<button class="button gGray nonbottom" id="m2">
+2 If <span class="box"><span class="var"><b>[1 Name]</b></span></span> <span class="box">contains</span> <span class="box">gif</span></button>
+	<div class="content contentloop">
+<button class="gBlue inside" id="m3">
+3 Get Images from <span class="box"><span class="var"><b>[Shortcut Input]</b></span></span></button></div>
+<button class="button gGray nonbottom nontop" id="m4">
+4 Otherwise</button>
+	<div class="content contentloop">
+<button class="button gGray nonbottom inside" id="m5">
+5 If <span class="box"><span class="var"><b>[Shortcut Input</b>’s Media Type<b>]</b></span></span> <span class="box">is</span> <span class="box">Image</span></button>
+	<div class="content contentloop dashed inside">
+<button class="button gBlue inside" id="m6">
+6 Convert Image <span class="box"><span class="var"><b>[Shortcut Input]</b></span></span> to <span class="box">JPEG</span></button>
+	<div class="content inside">
+		<div class="row"><div class="col1">ImageCompressionQuality</div>
+			<div class="col2">1</div></div>
+		<div class="row"><div class="col1">ImagePreserveMetadata</div>
+			<div class="col2">false</div></div></div></div>
+<button class="button gGray nonbottom nontop inside" id="m7">
+7 Otherwise</button>
+	<div class="content contentloop dashed inside">
+<button class="button gGray nonbottom inside" id="m8">
+8 If <span class="box"><span class="var"><b>[Shortcut Input</b>’s Media Type<b>]</b></span></span> <span class="box">is</span> <span class="box">Video</span></button>
+	<div class="content contentloop inside">
+<button class="gBlue inside" id="m9">
+9 Encode Media <span class="box"><span class="var"><b>[Shortcut Input]</b></span></span></button></div>
+<button class="gGray nontop inside" id="m10">
+10 End If</button></div>
+<button class="gGray nontop inside" id="m11">
+11 End If</button></div>
+<button class="gGray nontop" id="m12">
+12 End If&#12288;&#187;</button>
+<button class="button gGreen" id="m13">
+13 Get Contents of URL <span class="box">https://</span>&#12288;&#187;</button>
+	<div class="content">
+		<div class="row"><div class="col1">HTTPHeaders</div>
+			<div class="col2">{}</div></div>
+		<div class="row"><div class="col1">ShowHeaders</div>
+			<div class="col2">true</div></div>
+		<div class="row"><div class="col1">HTTPMethod</div>
+			<div class="col2">POST</div></div>
+		<div class="row"><div class="col1">HTTPBodyType</div>
+			<div class="col2">Form</div></div>
+		<div class="row"><div class="col1">FormValues</div>
+			<div class="col2">{  "file": "<span class="var"><b>[12 If Result]</b></span>" }</div></div></div>
+<button class="gOrange" id="m14">
+14 Get Dictionary from <span class="box"><span class="var"><b>[13 Contents of URL</b> as Text<b>]</b></span></span>&#12288;&#187;</button>
+<button class="gOrange" id="m15">
+15 Get Dictionary Value for <span class="box">resource</span> in <span class="box"><span class="var"><b>[14 Dictionary]</b></span></span>&#12288;&#187;</button>
+<button class="gBlue" id="m16">
+16 Copy <span class="box"><span class="var"><b>[15 Dictionary Value]</b></span></span> to Clipboard</button>
+<button class="button gGray nonbottom" id="m17">
+17 If <span class="box"><span class="var"><b>[Clipboard]</b></span></span> <span class="box">begins with</span> <span class="box">http</span></button>
+	<div class="content contentloop">
+<button class="button gYellow inside" id="m18">
+18 Show Alert</button>
+	<div class="content inside">
+		<div class="row"><div class="col1">AlertActionCancelButtonShown</div>
+			<div class="col2">false</div></div>
+		<div class="row"><div class="col1">AlertActionMessage</div>
+			<div class="col2">Link has been placed in your clipboard.</div></div>
+		<div class="row"><div class="col1">AlertActionTitle</div>
+			<div class="col2">Upload success!</div></div></div></div>
+<button class="button gGray nonbottom nontop" id="m19">
+19 Otherwise</button>
+	<div class="content contentloop">
+<button class="gYellow inside" id="m20">
+20 Text&#12288;&#187;</button>
+<button class="gBlue inside" id="m21">
+21 Copy <span class="box"><span class="var"><b>[20 Text]</b></span></span> to Clipboard</button>
+<button class="button gYellow inside" id="m22">
+22 Show Alert</button>
+	<div class="content inside">
+		<div class="row"><div class="col1">AlertActionCancelButtonShown</div>
+			<div class="col2">false</div></div>
+		<div class="row"><div class="col1">AlertActionMessage</div>
+			<div class="col2">Something went wrong. Please check your URL and headers.</div></div>
+		<div class="row"><div class="col1">AlertActionTitle</div>
+			<div class="col2">Error</div></div></div></div>
+<button class="gGray nontop" id="m23">
+23 End If</button>
+<script>
+for (b of document.getElementsByClassName('button')) {
+	b.addEventListener('click', function() {
+		this.classList.toggle('closed');
+		let s = this.nextElementSibling;
+		s.style.display = getComputedStyle(s).display==='none' ? 'block' : 'none';
+})}
+
+function magictap(id) {
+	event.stopPropagation();
+	let e = document.getElementById('m'+id);
+	let p = e;
+	while ((p = p.parentNode).tagName.toLowerCase() === 'div') {
+		p.style.display = 'block';
+		p.previousElementSibling.classList.remove('closed');
+	}
+	setTimeout(function(){ e.scrollIntoView({block:'nearest',behavior:'smooth'}); }, 10);
+}
+</script></body></html>

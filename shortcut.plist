@@ -1,0 +1,399 @@
+{
+   "WFWorkflowMinimumClientVersionString": "1113",
+   "WFWorkflowMinimumClientVersion": 1113,
+   "WFWorkflowIcon": {
+      "WFWorkflowIconStartColor": 4271458815,
+      "WFWorkflowIconGlyphNumber": 59826
+   },
+   "WFWorkflowClientVersion": "1206.4.3",
+   "WFWorkflowOutputContentItemClasses": [],
+   "WFWorkflowHasOutputFallback": false,
+   "WFWorkflowNoInputBehavior": {
+      "Name": "WFWorkflowNoInputBehaviorAskForInput",
+      "Parameters": {
+         "ItemClass": "WFPhotoMediaContentItem"
+      }
+   },
+   "WFWorkflowActions": [
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.comment",
+         "WFWorkflowActionParameters": {
+            "WFCommentActionText": "For info on headers and how to use them, look here: https://github.com/tycrek/ass#header-overrides\n\nCredit to tycrek & contributors for the image server, this shortcut would not exist without them.\n\nv1.0.0 by https://github.com/LeviSnoot"
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.getitemname",
+         "WFWorkflowActionParameters": {
+            "GetWebPageTitle": false,
+            "WFInput": {
+               "Value": {
+                  "Type": "ExtensionInput",
+                  "Aggrandizements": [
+                     {
+                        "Type": "WFCoercionVariableAggrandizement",
+                        "CoercionItemClass": "WFGenericFileContentItem"
+                     },
+                     {
+                        "PropertyUserInfo": "WFFileExtensionProperty",
+                        "Type": "WFPropertyVariableAggrandizement",
+                        "PropertyName": "File Extension"
+                     }
+                  ]
+               },
+               "WFSerializationType": "WFTextTokenAttachment"
+            },
+            "UUID": "C12B7BC7-4B5C-4403-B7CC-21C5CFD79694"
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+         "WFWorkflowActionParameters": {
+            "WFInput": {
+               "Type": "Variable",
+               "Variable": {
+                  "Value": {
+                     "OutputUUID": "C12B7BC7-4B5C-4403-B7CC-21C5CFD79694",
+                     "Type": "ActionOutput",
+                     "OutputName": "Name"
+                  },
+                  "WFSerializationType": "WFTextTokenAttachment"
+               }
+            },
+            "WFControlFlowMode": 0,
+            "WFConditionalActionString": "gif",
+            "GroupingIdentifier": "DF347143-C79F-4020-A715-CB373BCA94AD",
+            "WFCondition": 99
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.detect.images",
+         "WFWorkflowActionParameters": {
+            "WFInput": {
+               "Value": {
+                  "Type": "ExtensionInput"
+               },
+               "WFSerializationType": "WFTextTokenAttachment"
+            }
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+         "WFWorkflowActionParameters": {
+            "GroupingIdentifier": "DF347143-C79F-4020-A715-CB373BCA94AD",
+            "WFControlFlowMode": 1
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+         "WFWorkflowActionParameters": {
+            "GroupingIdentifier": "4A5965D9-45BC-48C3-8F24-8D74B4E3008D",
+            "WFInput": {
+               "Type": "Variable",
+               "Variable": {
+                  "Value": {
+                     "Type": "ExtensionInput",
+                     "Aggrandizements": [
+                        {
+                           "Type": "WFPropertyVariableAggrandizement",
+                           "PropertyName": "Media Type"
+                        }
+                     ]
+                  },
+                  "WFSerializationType": "WFTextTokenAttachment"
+               }
+            },
+            "WFControlFlowMode": 0,
+            "WFEnumeration": "Image",
+            "WFCondition": 4
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.image.convert",
+         "WFWorkflowActionParameters": {
+            "WFImageCompressionQuality": 1,
+            "WFInput": {
+               "Value": {
+                  "Type": "ExtensionInput"
+               },
+               "WFSerializationType": "WFTextTokenAttachment"
+            },
+            "UUID": "ABFC2337-401B-4C55-A4D3-6FDF583A566B",
+            "WFImagePreserveMetadata": false,
+            "WFImageFormat": "JPEG"
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+         "WFWorkflowActionParameters": {
+            "GroupingIdentifier": "4A5965D9-45BC-48C3-8F24-8D74B4E3008D",
+            "WFControlFlowMode": 1
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+         "WFWorkflowActionParameters": {
+            "GroupingIdentifier": "78E9705B-1A4E-4627-9137-88FDAADBADB0",
+            "WFInput": {
+               "Type": "Variable",
+               "Variable": {
+                  "Value": {
+                     "Type": "ExtensionInput",
+                     "Aggrandizements": [
+                        {
+                           "Type": "WFPropertyVariableAggrandizement",
+                           "PropertyName": "Media Type"
+                        }
+                     ]
+                  },
+                  "WFSerializationType": "WFTextTokenAttachment"
+               }
+            },
+            "WFControlFlowMode": 0,
+            "WFEnumeration": "Video",
+            "WFCondition": 4
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.encodemedia",
+         "WFWorkflowActionParameters": {
+            "WFMedia": {
+               "Value": {
+                  "Type": "ExtensionInput"
+               },
+               "WFSerializationType": "WFTextTokenAttachment"
+            },
+            "UUID": "9D196FE3-C8AB-4F5B-B748-5FAB81712ED9"
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+         "WFWorkflowActionParameters": {
+            "GroupingIdentifier": "78E9705B-1A4E-4627-9137-88FDAADBADB0",
+            "WFControlFlowMode": 2
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+         "WFWorkflowActionParameters": {
+            "GroupingIdentifier": "4A5965D9-45BC-48C3-8F24-8D74B4E3008D",
+            "WFControlFlowMode": 2
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+         "WFWorkflowActionParameters": {
+            "WFControlFlowMode": 2,
+            "GroupingIdentifier": "DF347143-C79F-4020-A715-CB373BCA94AD",
+            "UUID": "4FC7832E-BDC2-49FA-9956-5338C1F979E9"
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.downloadurl",
+         "WFWorkflowActionParameters": {
+            "WFHTTPHeaders": {
+               "Value": {
+                  "WFDictionaryFieldValueItems": []
+               },
+               "WFSerializationType": "WFDictionaryFieldValue"
+            },
+            "UUID": "29ACFEB7-7546-4E33-A251-9E5A63FB336C",
+            "ShowHeaders": true,
+            "WFURL": "https://",
+            "WFHTTPMethod": "POST",
+            "WFHTTPBodyType": "Form",
+            "WFFormValues": {
+               "Value": {
+                  "WFDictionaryFieldValueItems": [
+                     {
+                        "WFItemType": 5,
+                        "WFKey": {
+                           "Value": {
+                              "string": "file"
+                           },
+                           "WFSerializationType": "WFTextTokenString"
+                        },
+                        "WFValue": {
+                           "Value": {
+                              "Value": {
+                                 "OutputUUID": "4FC7832E-BDC2-49FA-9956-5338C1F979E9",
+                                 "Type": "ActionOutput",
+                                 "OutputName": "If Result"
+                              },
+                              "WFSerializationType": "WFTextTokenAttachment"
+                           },
+                           "WFSerializationType": "WFTokenAttachmentParameterState"
+                        }
+                     }
+                  ]
+               },
+               "WFSerializationType": "WFDictionaryFieldValue"
+            }
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.detect.dictionary",
+         "WFWorkflowActionParameters": {
+            "WFInput": {
+               "Value": {
+                  "Type": "ActionOutput",
+                  "OutputName": "Contents of URL",
+                  "OutputUUID": "29ACFEB7-7546-4E33-A251-9E5A63FB336C",
+                  "Aggrandizements": [
+                     {
+                        "Type": "WFCoercionVariableAggrandizement",
+                        "CoercionItemClass": "WFStringContentItem"
+                     }
+                  ]
+               },
+               "WFSerializationType": "WFTextTokenAttachment"
+            },
+            "UUID": "B659AB67-8D71-4E53-AFDE-B9C9B88A76AA"
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.getvalueforkey",
+         "WFWorkflowActionParameters": {
+            "WFInput": {
+               "Value": {
+                  "OutputUUID": "B659AB67-8D71-4E53-AFDE-B9C9B88A76AA",
+                  "Type": "ActionOutput",
+                  "OutputName": "Dictionary"
+               },
+               "WFSerializationType": "WFTextTokenAttachment"
+            },
+            "WFDictionaryKey": "resource",
+            "UUID": "50CB17F3-F171-4DE5-AD95-62AAAFA531BB"
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.setclipboard",
+         "WFWorkflowActionParameters": {
+            "WFInput": {
+               "Value": {
+                  "OutputUUID": "50CB17F3-F171-4DE5-AD95-62AAAFA531BB",
+                  "Type": "ActionOutput",
+                  "OutputName": "Dictionary Value"
+               },
+               "WFSerializationType": "WFTextTokenAttachment"
+            },
+            "UUID": "67C6AFE1-F7EE-4EBA-BDB8-C24CD2B20F9F"
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+         "WFWorkflowActionParameters": {
+            "WFInput": {
+               "Type": "Variable",
+               "Variable": {
+                  "Value": {
+                     "Type": "Clipboard"
+                  },
+                  "WFSerializationType": "WFTextTokenAttachment"
+               }
+            },
+            "WFControlFlowMode": 0,
+            "WFConditionalActionString": "http",
+            "GroupingIdentifier": "0FBE77F0-50D7-408B-8065-BCCCA86BA00C",
+            "WFCondition": 8
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.alert",
+         "WFWorkflowActionParameters": {
+            "WFAlertActionCancelButtonShown": false,
+            "WFAlertActionMessage": "Link has been placed in your clipboard.",
+            "WFAlertActionTitle": "Upload success!"
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+         "WFWorkflowActionParameters": {
+            "GroupingIdentifier": "0FBE77F0-50D7-408B-8065-BCCCA86BA00C",
+            "WFControlFlowMode": 1
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.gettext",
+         "WFWorkflowActionParameters": {
+            "UUID": "386EF43D-73AA-4FA1-8E9E-16E61DD4C650"
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.setclipboard",
+         "WFWorkflowActionParameters": {
+            "WFInput": {
+               "Value": {
+                  "OutputUUID": "386EF43D-73AA-4FA1-8E9E-16E61DD4C650",
+                  "Type": "ActionOutput",
+                  "OutputName": "Text"
+               },
+               "WFSerializationType": "WFTextTokenAttachment"
+            },
+            "UUID": "2C552069-C58C-40F0-9565-D96D8A565F6B"
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.alert",
+         "WFWorkflowActionParameters": {
+            "WFAlertActionCancelButtonShown": false,
+            "WFAlertActionMessage": "Something went wrong. Please check your URL and headers.",
+            "WFAlertActionTitle": "Error"
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+         "WFWorkflowActionParameters": {
+            "WFControlFlowMode": 2,
+            "GroupingIdentifier": "0FBE77F0-50D7-408B-8065-BCCCA86BA00C",
+            "UUID": "7E7BCD56-53C0-4CFF-BDD2-1F949C1A8AD7"
+         }
+      }
+   ],
+   "WFWorkflowInputContentItemClasses": [
+      "WFImageContentItem",
+      "WFAVAssetContentItem",
+      "WFGenericFileContentItem"
+   ],
+   "WFWorkflowImportQuestions": [
+      {
+         "Category": "Parameter",
+         "ParameterKey": "WFURL",
+         "ActionIndex": 13,
+         "Text": "URL for your ass instance:",
+         "DefaultValue": "https://"
+      },
+      {
+         "Category": "Parameter",
+         "ParameterKey": "WFHTTPHeaders",
+         "ActionIndex": 13,
+         "Text": "Add your token in the \"Text\" field. You can add any other headers you'd like here. For information on headers and how to use them, check the comment in the shortcut.",
+         "DefaultValue": {
+            "Value": {
+               "WFDictionaryFieldValueItems": [
+                  {
+                     "WFItemType": 0,
+                     "WFKey": {
+                        "Value": {
+                           "string": "Authorization"
+                        },
+                        "WFSerializationType": "WFTextTokenString"
+                     },
+                     "WFValue": {
+                        "Value": {
+                           "string": ""
+                        },
+                        "WFSerializationType": "WFTextTokenString"
+                     }
+                  }
+               ]
+            },
+            "WFSerializationType": "WFDictionaryFieldValue"
+         }
+      }
+   ],
+   "WFQuickActionSurfaces": [],
+   "WFWorkflowTypes": [
+      "ActionExtension"
+   ],
+   "WFWorkflowHasShortcutInputVariables": true
+}
