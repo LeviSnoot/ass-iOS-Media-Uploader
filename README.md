@@ -1,6 +1,6 @@
 # [tycrek/ass](https://github.com/tycrek/ass) iOS Media Uploader
 
-<img src="assets/routinehub-badge.png" width="400" href="https://routinehub.co/shortcut/13290/">
+[<img alt="Download on RoutineHub" width="400px" src="assets/routinehub-badge.png" />](https://routinehub.co/shortcut/13290/)
 
 This iOS/Siri Shortcut uploads your media (images, videos & gifs) to your [ass](https://github.com/tycrek/ass) server (an open source [ShareX](https://github.com/ShareX/ShareX) media hosting server).
 
