@@ -9,3 +9,7 @@ The shortcut requires configuration, which you will be prompted to do on import.
 Either start the shortcut from your share sheet or the shortcuts app, in which case you will be prompted to select media from your Photos gallery.
 
 If successful, the shortcut will place the URL to your shared file in your clipboard.
+
+# Demo
+https://user-images.githubusercontent.com/13402525/199115245-82828c4a-f161-4318-b937-daafed0080ee.mp4
+
