@@ -18,7 +18,7 @@
       {
          "WFWorkflowActionIdentifier": "is.workflow.actions.comment",
          "WFWorkflowActionParameters": {
-            "WFCommentActionText": "For info on headers and how to use them, look here: https://github.com/tycrek/ass#header-overrides\n\nCredit to tycrek & contributors for the image server, this shortcut would not exist without them.\n\nv1.0.0 by https://github.com/LeviSnoot"
+            "WFCommentActionText": "For info on headers and how to use them, look here: https://github.com/tycrek/ass#header-overrides\n\nCredit to tycrek & contributors for the image server, this shortcut would not exist without them.\n\nv1.0.1 by https://github.com/LeviSnoot"
          }
       },
       {
@@ -73,13 +73,53 @@
                   "Type": "ExtensionInput"
                },
                "WFSerializationType": "WFTextTokenAttachment"
-            }
+            },
+            "UUID": "0F3B2520-7F1A-4749-A646-B8A7BC262520"
          }
       },
       {
          "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
          "WFWorkflowActionParameters": {
             "GroupingIdentifier": "DF347143-C79F-4020-A715-CB373BCA94AD",
+            "WFControlFlowMode": 1
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+         "WFWorkflowActionParameters": {
+            "WFInput": {
+               "Type": "Variable",
+               "Variable": {
+                  "Value": {
+                     "OutputUUID": "C12B7BC7-4B5C-4403-B7CC-21C5CFD79694",
+                     "Type": "ActionOutput",
+                     "OutputName": "Name"
+                  },
+                  "WFSerializationType": "WFTextTokenAttachment"
+               }
+            },
+            "WFControlFlowMode": 0,
+            "WFConditionalActionString": "png",
+            "GroupingIdentifier": "FA840B3C-98F9-4AF3-AD57-C69EA5267E54",
+            "WFCondition": 99
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.detect.images",
+         "WFWorkflowActionParameters": {
+            "WFInput": {
+               "Value": {
+                  "Type": "ExtensionInput"
+               },
+               "WFSerializationType": "WFTextTokenAttachment"
+            },
+            "UUID": "4C0B97FE-E9B7-4BB3-B83C-3C3F64CA6934"
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+         "WFWorkflowActionParameters": {
+            "GroupingIdentifier": "FA840B3C-98F9-4AF3-AD57-C69EA5267E54",
             "WFControlFlowMode": 1
          }
       },
@@ -176,6 +216,13 @@
          "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
          "WFWorkflowActionParameters": {
             "GroupingIdentifier": "4A5965D9-45BC-48C3-8F24-8D74B4E3008D",
+            "WFControlFlowMode": 2
+         }
+      },
+      {
+         "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+         "WFWorkflowActionParameters": {
+            "GroupingIdentifier": "FA840B3C-98F9-4AF3-AD57-C69EA5267E54",
             "WFControlFlowMode": 2
          }
       },
@@ -358,15 +405,15 @@
       {
          "Category": "Parameter",
          "ParameterKey": "WFURL",
-         "ActionIndex": 13,
-         "Text": "URL for your ass instance:",
+         "ActionIndex": 19,
+         "Text": "Add the URL for your ass instance.",
          "DefaultValue": "https://"
       },
       {
          "Category": "Parameter",
          "ParameterKey": "WFHTTPHeaders",
-         "ActionIndex": 13,
-         "Text": "Add your token in the \"Text\" field. You can add any other headers you'd like here. For information on headers and how to use them, check the comment in the shortcut.",
+         "ActionIndex": 19,
+         "Text": "Add your Authorization token. You can pass any other headers you'd like here. For more info, check the comment in the shortcut.",
          "DefaultValue": {
             "Value": {
                "WFDictionaryFieldValueItems": [
