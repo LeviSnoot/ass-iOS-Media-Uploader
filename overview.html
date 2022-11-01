@@ -1,7 +1,7 @@
 <!DOCTYPE html><html><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <meta name="format-detection" content="telephone=no,date=no">
-<title>tycrek:ass iOS Media Uploader</title>
+<title>tycrek/ass iOS Media Uploader</title>
 <style>
 body {
 	font-family: system-ui;
@@ -143,7 +143,7 @@ span.magic {
 	span.box { background-color: #000; }
 }
 </style></head><body>
-<button class="button gParams"><b>tycrek:ass iOS Media Uploader</b> (24 actions, 18 KB)</button>
+<button class="button gParams"><b>tycrek/ass iOS Media Uploader</b> (28 actions, 20 KB)</button>
 <div class="content"><div class="col2">"WFQuickActionSurfaces": [],
 "WFWorkflowClientVersion": "1206.4.3",
 "WFWorkflowHasOutputFallback": false,
@@ -156,15 +156,15 @@ span.magic {
    {
       "Category": "Parameter",
       "ParameterKey": "WFURL",
-      "ActionIndex": <span class="magic" onclick="magictap(13)"><b>13</b></span>,
-      "Text": "URL for your ass instance:",
+      "ActionIndex": <span class="magic" onclick="magictap(19)"><b>19</b></span>,
+      "Text": "Add the URL for your ass instance.",
       "DefaultValue": "https://"
    },
    {
       "Category": "Parameter",
       "ParameterKey": "WFHTTPHeaders",
-      "ActionIndex": <span class="magic" onclick="magictap(13)"><b>13</b></span>,
-      "Text": "Add your token in the \"Text\" field. You can add any other headers you'd like here. For information on headers and how to use them, check the comment in the shortcut.",
+      "ActionIndex": <span class="magic" onclick="magictap(19)"><b>19</b></span>,
+      "Text": "Add your Authorization token. You can pass any other headers you'd like here. For more info, check the comment in the shortcut.",
       "DefaultValue": {
          "Value": {
             "WFDictionaryFieldValueItems": [
@@ -215,9 +215,9 @@ span.magic {
 
 Credit to tycrek &amp; contributors for the image server, this shortcut would not exist without them.
 
-v1.0.0 by https://github.com/LeviSnoot</div></div>
+v1.0.1 by https://github.com/LeviSnoot</div></div>
 <button class="button " id="m1">
-1 Get Name of <span class="box"><span class="var"><b>[Shortcut Input</b> as GenericFile’s File Extension<b>]</b></span></span>&#12288;&#187;</button>
+1 Get Name of <span class="box"><span class="var"><b>[Shortcut Input</b> as GenericFile’s File Extension<b>]</b></span></span>&#12288;&#187; <i>2</i> <span class="magic" onclick="magictap(5)">5</span></button>
 	<div class="content">
 		<div class="row"><div class="col1">GetWebPageTitle</div>
 			<div class="col2">false</div></div></div>
@@ -230,31 +230,41 @@ v1.0.0 by https://github.com/LeviSnoot</div></div>
 4 Otherwise</button>
 	<div class="content contentloop">
 <button class="button gGray nonbottom inside" id="m5">
-5 If <span class="box"><span class="var"><b>[Shortcut Input</b>’s Media Type<b>]</b></span></span> <span class="box">is</span> <span class="box">Image</span></button>
+5 If <span class="box"><span class="magic" onclick="magictap(1)"><b>[1 Name]</b></span></span> <span class="box">contains</span> <span class="box">png</span></button>
 	<div class="content contentloop dashed inside">
-<button class="button gBlue inside" id="m6">
-6 Convert Image <span class="box"><span class="var"><b>[Shortcut Input]</b></span></span> to <span class="box">JPEG</span></button>
+<button class="gBlue inside" id="m6">
+6 Get Images from <span class="box"><span class="var"><b>[Shortcut Input]</b></span></span></button></div>
+<button class="button gGray nonbottom nontop inside" id="m7">
+7 Otherwise</button>
+	<div class="content contentloop dashed inside">
+<button class="button gGray nonbottom inside" id="m8">
+8 If <span class="box"><span class="var"><b>[Shortcut Input</b>’s Media Type<b>]</b></span></span> <span class="box">is</span> <span class="box">Image</span></button>
+	<div class="content contentloop inside">
+<button class="button gBlue inside" id="m9">
+9 Convert Image <span class="box"><span class="var"><b>[Shortcut Input]</b></span></span> to <span class="box">JPEG</span></button>
 	<div class="content inside">
 		<div class="row"><div class="col1">ImageCompressionQuality</div>
 			<div class="col2">1</div></div>
 		<div class="row"><div class="col1">ImagePreserveMetadata</div>
 			<div class="col2">false</div></div></div></div>
-<button class="button gGray nonbottom nontop inside" id="m7">
-7 Otherwise</button>
-	<div class="content contentloop dashed inside">
-<button class="button gGray nonbottom inside" id="m8">
-8 If <span class="box"><span class="var"><b>[Shortcut Input</b>’s Media Type<b>]</b></span></span> <span class="box">is</span> <span class="box">Video</span></button>
+<button class="button gGray nonbottom nontop inside" id="m10">
+10 Otherwise</button>
 	<div class="content contentloop inside">
-<button class="gBlue inside" id="m9">
-9 Encode Media <span class="box"><span class="var"><b>[Shortcut Input]</b></span></span></button></div>
-<button class="gGray nontop inside" id="m10">
-10 End If</button></div>
-<button class="gGray nontop inside" id="m11">
-11 End If</button></div>
-<button class="gGray nontop" id="m12">
-12 End If&#12288;&#187;</button>
-<button class="button gGreen" id="m13">
-13 Get Contents of URL <span class="box">https://</span>&#12288;&#187;</button>
+<button class="button gGray nonbottom inside" id="m11">
+11 If <span class="box"><span class="var"><b>[Shortcut Input</b>’s Media Type<b>]</b></span></span> <span class="box">is</span> <span class="box">Video</span></button>
+	<div class="content contentloop dashed inside">
+<button class="gBlue inside" id="m12">
+12 Encode Media <span class="box"><span class="var"><b>[Shortcut Input]</b></span></span></button></div>
+<button class="gGray nontop inside" id="m13">
+13 End If</button></div>
+<button class="gGray nontop inside" id="m14">
+14 End If</button></div>
+<button class="gGray nontop inside" id="m15">
+15 End If</button></div>
+<button class="gGray nontop" id="m16">
+16 End If&#12288;▵<span class="magic" onclick="magictap(4)">4</span>&#12288;&#187;</button>
+<button class="button gGreen" id="m17">
+17 Get Contents of URL <span class="box">https://</span>&#12288;&#187;</button>
 	<div class="content">
 		<div class="row"><div class="col1">HTTPHeaders</div>
 			<div class="col2">{}</div></div>
@@ -265,18 +275,18 @@ v1.0.0 by https://github.com/LeviSnoot</div></div>
 		<div class="row"><div class="col1">HTTPBodyType</div>
 			<div class="col2">Form</div></div>
 		<div class="row"><div class="col1">FormValues</div>
-			<div class="col2">{  "file": "<span class="var"><b>[12 If Result]</b></span>" }</div></div></div>
-<button class="gOrange" id="m14">
-14 Get Dictionary from <span class="box"><span class="var"><b>[13 Contents of URL</b> as Text<b>]</b></span></span>&#12288;&#187;</button>
-<button class="gOrange" id="m15">
-15 Get Dictionary Value for <span class="box">resource</span> in <span class="box"><span class="var"><b>[14 Dictionary]</b></span></span>&#12288;&#187;</button>
-<button class="gBlue" id="m16">
-16 Copy <span class="box"><span class="var"><b>[15 Dictionary Value]</b></span></span> to Clipboard</button>
-<button class="button gGray nonbottom" id="m17">
-17 If <span class="box"><span class="var"><b>[Clipboard]</b></span></span> <span class="box">begins with</span> <span class="box">http</span></button>
+			<div class="col2">{  "file": "<span class="var"><b>[16 If Result]</b></span>" }</div></div></div>
+<button class="gOrange" id="m18">
+18 Get Dictionary from <span class="box"><span class="var"><b>[17 Contents of URL</b> as Text<b>]</b></span></span>&#12288;&#187;</button>
+<button class="gOrange" id="m19">
+19 Get Dictionary Value for <span class="box">resource</span> in <span class="box"><span class="var"><b>[18 Dictionary]</b></span></span>&#12288;&#187;</button>
+<button class="gBlue" id="m20">
+20 Copy <span class="box"><span class="var"><b>[19 Dictionary Value]</b></span></span> to Clipboard</button>
+<button class="button gGray nonbottom" id="m21">
+21 If <span class="box"><span class="var"><b>[Clipboard]</b></span></span> <span class="box">begins with</span> <span class="box">http</span></button>
 	<div class="content contentloop">
-<button class="button gYellow inside" id="m18">
-18 Show Alert</button>
+<button class="button gYellow inside" id="m22">
+22 Show Alert</button>
 	<div class="content inside">
 		<div class="row"><div class="col1">AlertActionCancelButtonShown</div>
 			<div class="col2">false</div></div>
@@ -284,15 +294,15 @@ v1.0.0 by https://github.com/LeviSnoot</div></div>
 			<div class="col2">Link has been placed in your clipboard.</div></div>
 		<div class="row"><div class="col1">AlertActionTitle</div>
 			<div class="col2">Upload success!</div></div></div></div>
-<button class="button gGray nonbottom nontop" id="m19">
-19 Otherwise</button>
+<button class="button gGray nonbottom nontop" id="m23">
+23 Otherwise</button>
 	<div class="content contentloop">
-<button class="gYellow inside" id="m20">
-20 Text&#12288;&#187;</button>
-<button class="gBlue inside" id="m21">
-21 Copy <span class="box"><span class="var"><b>[20 Text]</b></span></span> to Clipboard</button>
-<button class="button gYellow inside" id="m22">
-22 Show Alert</button>
+<button class="gYellow inside" id="m24">
+24 Text&#12288;&#187;</button>
+<button class="gBlue inside" id="m25">
+25 Copy <span class="box"><span class="var"><b>[24 Text]</b></span></span> to Clipboard</button>
+<button class="button gYellow inside" id="m26">
+26 Show Alert</button>
 	<div class="content inside">
 		<div class="row"><div class="col1">AlertActionCancelButtonShown</div>
 			<div class="col2">false</div></div>
@@ -300,8 +310,8 @@ v1.0.0 by https://github.com/LeviSnoot</div></div>
 			<div class="col2">Something went wrong. Please check your URL and headers.</div></div>
 		<div class="row"><div class="col1">AlertActionTitle</div>
 			<div class="col2">Error</div></div></div></div>
-<button class="gGray nontop" id="m23">
-23 End If</button>
+<button class="gGray nontop" id="m27">
+27 End If</button>
 <script>
 for (b of document.getElementsByClassName('button')) {
 	b.addEventListener('click', function() {
